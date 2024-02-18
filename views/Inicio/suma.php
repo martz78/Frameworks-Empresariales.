@@ -15,7 +15,8 @@ if (isset($respuesta)) {
     padding: 20px;
     border: 1px solid #ccc;
     border-radius: 5px;
-    background-color: #f9f9f9;
+    background-color: #343a40;
+    color: #FFFFFF;
 }
 
 .input-number {
@@ -44,16 +45,16 @@ if (isset($respuesta)) {
         <?php $formulario = ActiveForm::begin(); ?>
 
         <div class="form-group">
-            <?= $formulario->field($model, 'valor_a')->textInput(['class' => 'form-control input-number', 'placeholder' => 'Número 1']) ?>
-            <?= $formulario->field($model, 'valor_b')->textInput(['class' => 'form-control input-number', 'placeholder' => 'Número 2']) ?>
+            <?= $formulario->field($model, 'numero_a')->textInput(['class' => 'form-control input-number', 'placeholder' => 'Número 1']) ?>
+            <?= $formulario->field($model, 'numero_b')->textInput(['class' => 'form-control input-number', 'placeholder' => 'Número 2']) ?>
             <?= $formulario->field($model, 'operador')->radioList(['+' => 'suma ', '-' => 'resta', '*' => 'multiplicacion','/'=>'division'], [
                 'class' => 'form-control operator-select',
                 'itemOptions' => ['labelOptions' => ['class' => 'radio-inline']]
             ])->label(false) ?>
         </div>
 
-        <div class="form-group">
-            <?= Html::submitButton('Calcular', ['class' => 'btn btn-success']) ?>
+        <div class="form-group" style="text-align: center;">
+            <?= Html::submitButton('Calcular', ['class' => 'btn btn-secondary']) ?>
         </div>
 
         <?php ActiveForm::end(); ?>

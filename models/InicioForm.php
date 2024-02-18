@@ -7,16 +7,16 @@ use yii\base\Model;
 
 class InicioForm extends Model
 {
-    public $valor_a;
-    public $valor_b;
+    public $numero_a;
+    public $numero_b;
     public $operador;
 
     public function rules(
 )
     {
         return [
-            [['valor_a', 'valor_b','operador'], 'required'],
-            [['valor_a', 'valor_b'], 'number'],
+            [['numero_a', 'numero_b','operador'], 'required'],
+            [['numero_a', 'numero_b'], 'number'],
         ];
     }
 }

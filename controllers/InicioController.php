@@ -29,9 +29,9 @@ class InicioController extends Controller
 
     public function actionResta()
     {
-        $valor_a = 60;
-        $valor_b = 8;
-        $resultado = $valor_a - $valor_b;
+        $numero_a = 60;
+        $numero_b = 8;
+        $resultado = $numero_a - $numero_b;
 
         return $this->render('resta', ['resultado' => $resultado]);
     }
@@ -43,17 +43,17 @@ class InicioController extends Controller
         if ($model->load(Yii::$app->request->post()) && $model->validate()) {
             $operador=$model->operador;
             if($operador=="-"){
-                $resultado = $model->valor_a - $model->valor_b;
+                $resultado = $model->numero_a - $model->numero_b;
                 $respuesta = ("El resultado de la resta es: " . $resultado);
             }else if($operador=="+"){
-                $resultado = $model->valor_a + $model->valor_b;
+                $resultado = $model->numero_a + $model->numero_b;
                 $respuesta = ("El resultado de la suma es: " . $resultado);
             }else if($operador=="*"){
-                $resultado = $model->valor_a * $model->valor_b;
+                $resultado = $model->numero_a * $model->numero_b;
                 $respuesta = ("El resultado de la multiplicacion es: " . $resultado);
             }else if($operador=="/"){
-                if($model->valor_b!=0){
-                    $resultado = $model->valor_a / $model->valor_b;
+                if($model->numero_b!=0){
+                    $resultado = $model->numero_a / $model->numero_b;
                 $respuesta = ("El resultado de la division es: " . $resultado);
                 }else{
                     $respuesta = ("No se puede dividir entre cero");
